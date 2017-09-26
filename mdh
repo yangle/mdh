@@ -1,0 +1,24 @@
+#!/bin/bash
+
+usage() {
+    cat <<EOF
+Renders a markdown file into html using pandoc
+
+Usage:
+    $1 /path/to/input.md  # generates /path/to/input.html
+    $1 /path/to/input.md /another/path/to/output.html
+EOF
+}
+
+input="$1"
+if [[ ! -e "$input" ]]; then  # shows usage when $input doesn't exist
+    usage $(basename "$0")
+    exit 1
+fi
+
+output="$2"
+if [[ -z "$output" ]]; then
+    output="${input%.*}".html
+fi
+
+echo $output
