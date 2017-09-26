@@ -35,5 +35,6 @@ hljs_css="$hljs"/styles/agate.min.css
 pandoc --standalone --from markdown --to html \
     --template "$static"/pandoc.html --css "$static"/pandoc.css \
     --mathjax="$mathjax_js" -H "$mathjax_incl" \
+    --filter "$root"/pandoc-eqref/pandoc-eqref \
     --no-highlight --css "$hljs_css" -V include-after="$hljs_incl" \
     "$input" > "$output"
