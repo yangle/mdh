@@ -21,4 +21,19 @@ if [[ -z "$output" ]]; then
     output="${input%.*}".html
 fi
 
-echo $output
+root=$(dirname $(realpath "${BASH_SOURCE[0]}"))
+static="$root"/static
+
+mathjax_js="$root/mathjax/MathJax.js?config=TeX-AMS_CHTML-full"
+mathjax_incl="$static"/mathjax.html
+
+# https://stackoverflow.com/a/31926346
+export hljs="$root"/highlightjs/build
+hljs_incl=`envsubst < "$static"/highlightjs.html`
+hljs_css="$hljs"/styles/agate.min.css
+
+pandoc --standalone --from markdown --to html \
+    --template "$static"/pandoc.html --css "$static"/pandoc.css \
+    --mathjax="$mathjax_js" -H "$mathjax_incl" \
+    --no-highlight --css "$hljs_css" -V include-after="$hljs_incl" \
+    "$input" > "$output"
