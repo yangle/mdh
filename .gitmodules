@@ -1,3 +1,6 @@
 [submodule "highlightjs"]
 	path = highlightjs
 	url = https://github.com/highlightjs/cdn-release.git
+[submodule "mathjax"]
+	path = mathjax
+	url = https://github.com/mathjax/MathJax.git
