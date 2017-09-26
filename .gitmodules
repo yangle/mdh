@@ -4,3 +4,6 @@
 [submodule "mathjax"]
 	path = mathjax
 	url = https://github.com/mathjax/MathJax.git
+[submodule "pandoc-eqref"]
+	path = pandoc-eqref
+	url = https://github.com/yangle/pandoc-eqref.git
