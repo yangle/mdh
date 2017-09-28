@@ -40,22 +40,22 @@ a:hover, a:focus {
 }
 
 *::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
+  background: #f90;
   color: #000;
 }
 
 *::selection {
-  background: rgba(255, 255, 0, 0.3);
+  background: #f90;
   color: #000;
 }
 
 a::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
+  background: #f90;
   color: #0645ad;
 }
 
 a::selection {
-  background: rgba(255, 255, 0, 0.3);
+  background: #f90;
   color: #0645ad;
 }
 
