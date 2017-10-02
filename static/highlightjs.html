@@ -2,4 +2,7 @@
 <script src="$hljs/languages/mathematica.min.js"></script>
 <script src="$hljs/languages/r.min.js"></script>
 <script src="$hljs/languages/rust.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  hljs.registerLanguage('txt', function(hljs) {return {};});
+  hljs.initHighlightingOnLoad();
+</script>
