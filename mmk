@@ -18,8 +18,7 @@ if [[ -z "$input" ]]; then
     exit 1
 fi
 
-inputbase=$(basename "$input")
-output=/tmp/md2hmk-${inputbase%.*}.html
+output=${input%.*}.html
 shown=false
 
 echo "Watching $input"
