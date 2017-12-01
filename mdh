@@ -30,7 +30,7 @@ mathjax_incl="$static"/mathjax.html
 # https://stackoverflow.com/a/31926346
 export hljs="$root"/highlightjs/build
 hljs_incl=`envsubst < "$static"/highlightjs.html`
-hljs_css="$hljs"/styles/agate.min.css
+hljs_css="$hljs"/styles/atom-one-light.min.css
 
 pandoc --standalone --from markdown --to html \
     --template "$static"/pandoc.html --css "$static"/pandoc.css \
