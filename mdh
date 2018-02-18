@@ -33,6 +33,7 @@ hljs_incl=`envsubst < "$static"/highlightjs.html`
 hljs_css="$hljs"/styles/atom-one-light.min.css
 
 pandoc --standalone --from markdown --to html \
+    --metadata pagetitle="$input" \
     --template "$static"/pandoc.html --css "$static"/pandoc.css \
     --mathjax="$mathjax_js" -H "$mathjax_incl" \
     --filter "$root"/pandoc-eqref/pandoc-eqref \
