@@ -34,7 +34,6 @@ fi
 
 echo "Watching $input"
 while true; do
-    inotifywait -qq -e CLOSE_WRITE "$input"
     $mdh "$input" "$output"
     echo "Rendered $output"
 
@@ -48,4 +47,6 @@ while true; do
         xdotool search --onlyvisible --all --desktop `xdotool get_desktop` --class $browser windowfocus key 'F5'
         xdotool windowfocus $active_window
     fi
+
+    inotifywait -qq -e CLOSE_WRITE "$input"
 done
