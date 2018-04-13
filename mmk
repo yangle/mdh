@@ -21,6 +21,11 @@ fi
 output=${input%.*}.html
 shown=false
 
+# Make sure $DE is defined; otherwise xdg-settings may fail.
+if [ -z "$DE" ]; then
+    export DE=gnome
+fi
+
 browser_desktop=$(xdg-settings get default-web-browser)
 browser=${browser_desktop%.*}  # strip the .desktop extension
 if [[ -z "$browser" ]]; then
